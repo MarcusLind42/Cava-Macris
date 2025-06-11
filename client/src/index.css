@@ -117,6 +117,24 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-text-sm {
+      font-size: 0.875rem;
+    }
+    
+    .mobile-padding {
+      padding: 0.75rem;
+    }
+    
+    .mobile-gap {
+      gap: 0.75rem;
+    }
+  }
 }
 
 @keyframes fadeIn {

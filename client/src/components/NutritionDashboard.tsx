@@ -105,35 +105,35 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Macro Rings */}
       <motion.div
-        className="glass-panel p-6 rounded-3xl fade-in"
+        className="glass-panel p-4 md:p-6 rounded-2xl md:rounded-3xl fade-in"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="text-xl font-bold mb-6 glow-text text-center">Macro Breakdown</h3>
+        <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 glow-text text-center">Macro Breakdown</h3>
         
         {/* Total Calories */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 md:mb-8">
           <motion.div
             key={animatedValues.calories}
-            className="text-5xl font-bold glow-text text-blue-400"
+            className="text-3xl md:text-5xl font-bold glow-text text-blue-400"
             initial={{ scale: 1.2, color: '#60A5FA' }}
             animate={{ scale: 1, color: '#FFFFFF' }}
             transition={{ duration: 0.3 }}
           >
             {animatedValues.calories}
           </motion.div>
-          <div className="text-sm text-gray-400">Total Calories</div>
+          <div className="text-xs md:text-sm text-gray-400">Total Calories</div>
           <div className="text-xs text-gray-500 mt-1">
             {Math.round((animatedValues.calories / dailyTargets.calories) * 100)}% of daily goal
           </div>
         </div>
 
         {/* Macro Progress Bars */}
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           <ProgressBar
             value={animatedValues.protein_g}
             max={dailyTargets.protein_g}
@@ -159,18 +159,18 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
 
       {/* Detailed Nutrition */}
       <motion.div
-        className="glass-panel p-6 rounded-3xl fade-in"
+        className="glass-panel p-4 md:p-6 rounded-2xl md:rounded-3xl fade-in"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <h3 className="text-lg font-bold mb-4 glow-text">Nutrition Details</h3>
-        <div className="space-y-4">
+        <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4 glow-text">Nutrition Details</h3>
+        <div className="space-y-3 md:space-y-4">
           <div className="flex justify-between items-center">
-            <span className="text-gray-300">Calories</span>
+            <span className="text-gray-300 text-sm md:text-base">Calories</span>
             <motion.span
               key={animatedValues.calories}
-              className="font-semibold text-white"
+              className="font-semibold text-white text-sm md:text-base"
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.2 }}
@@ -179,10 +179,10 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
             </motion.span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-300">Protein</span>
+            <span className="text-gray-300 text-sm md:text-base">Protein</span>
             <motion.span
               key={animatedValues.protein_g}
-              className="font-semibold text-orange-400"
+              className="font-semibold text-orange-400 text-sm md:text-base"
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
             >
@@ -190,10 +190,10 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
             </motion.span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-300">Carbohydrates</span>
+            <span className="text-gray-300 text-sm md:text-base">Carbohydrates</span>
             <motion.span
               key={animatedValues.carbohydrates_g}
-              className="font-semibold text-blue-400"
+              className="font-semibold text-blue-400 text-sm md:text-base"
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
             >
@@ -201,10 +201,10 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
             </motion.span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-300">Total Fat</span>
+            <span className="text-gray-300 text-sm md:text-base">Total Fat</span>
             <motion.span
               key={animatedValues.total_fat_g}
-              className="font-semibold text-green-400"
+              className="font-semibold text-green-400 text-sm md:text-base"
               initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
             >
@@ -213,8 +213,6 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
           </div>
         </div>
       </motion.div>
-
-
     </div>
   );
 }
