@@ -10,6 +10,7 @@ export interface Ingredient {
   category: string;
   nutrition: NutritionInfo;
   quantity: number;
+  portionSize?: 'full' | 'half';
 }
 
 export interface CategoryData {

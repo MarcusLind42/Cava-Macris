@@ -17,10 +17,20 @@ export default function BowlBuilder({ selectedCategory, selectedIngredients, onI
   const categoryInfo = getCategoryByKey(selectedCategory);
   const categoryData = nutritionData[categoryInfo?.name || ''] || {};
 
-  const addIngredient = (name: string, nutrition: NutritionInfo, category: string) => {
+  const addIngredient = (name: string, nutrition: NutritionInfo, category: string, portionSize: 'full' | 'half' = 'full') => {
     setAnimatingIngredient(name);
     
-    const existingIndex = selectedIngredients.findIndex(ing => ing.name === name);
+    // Calculate adjusted nutrition based on portion size
+    const adjustedNutrition = portionSize === 'half' ? {
+      calories: Math.round(nutrition.calories / 2),
+      protein_g: Math.round(nutrition.protein_g / 2 * 10) / 10,
+      carbohydrates_g: Math.round(nutrition.carbohydrates_g / 2 * 10) / 10,
+      total_fat_g: Math.round(nutrition.total_fat_g / 2 * 10) / 10
+    } : nutrition;
+    
+    // Create a unique key for the ingredient with portion size
+    const ingredientKey = portionSize === 'half' ? `${name} (Half)` : name;
+    const existingIndex = selectedIngredients.findIndex(ing => ing.name === ingredientKey);
     
     if (existingIndex >= 0) {
       const updated = [...selectedIngredients];
@@ -28,10 +38,11 @@ export default function BowlBuilder({ selectedCategory, selectedIngredients, onI
       onIngredientsChange(updated);
     } else {
       const newIngredient: Ingredient = {
-        name,
+        name: ingredientKey,
         category,
-        nutrition,
-        quantity: 1
+        nutrition: adjustedNutrition,
+        quantity: 1,
+        portionSize
       };
       onIngredientsChange([...selectedIngredients, newIngredient]);
     }

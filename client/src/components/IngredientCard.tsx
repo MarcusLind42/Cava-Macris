@@ -9,14 +9,17 @@ interface IngredientCardProps {
   nutrition: NutritionInfo;
   category: string;
   color: string;
-  onAdd: (name: string, nutrition: NutritionInfo, category: string) => void;
+  onAdd: (name: string, nutrition: NutritionInfo, category: string, portionSize?: 'full' | 'half') => void;
 }
 
 export default function IngredientCard({ name, nutrition, category, color, onAdd }: IngredientCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [selectedPortion, setSelectedPortion] = useState<'full' | 'half'>('full');
 
-  const handleAdd = () => {
-    onAdd(name, nutrition, category);
+  const isPortionSelectable = category === 'Greens + Grains' || category === 'Mains';
+
+  const handleAdd = (portionSize: 'full' | 'half' = 'full') => {
+    onAdd(name, nutrition, category, portionSize);
   };
 
   const colorClasses = {
@@ -52,19 +55,27 @@ export default function IngredientCard({ name, nutrition, category, color, onAdd
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between space-x-4">
                     <span className="text-gray-400">Calories:</span>
-                    <span className="text-white font-medium">{nutrition.calories}</span>
+                    <span className="text-white font-medium">
+                      {selectedPortion === 'half' ? Math.round(nutrition.calories / 2) : nutrition.calories}
+                    </span>
                   </div>
                   <div className="flex justify-between space-x-4">
                     <span className="text-gray-400">Protein:</span>
-                    <span className="text-white font-medium">{nutrition.protein_g}g</span>
+                    <span className="text-white font-medium">
+                      {selectedPortion === 'half' ? (nutrition.protein_g / 2).toFixed(1) : nutrition.protein_g}g
+                    </span>
                   </div>
                   <div className="flex justify-between space-x-4">
                     <span className="text-gray-400">Carbs:</span>
-                    <span className="text-white font-medium">{nutrition.carbohydrates_g}g</span>
+                    <span className="text-white font-medium">
+                      {selectedPortion === 'half' ? (nutrition.carbohydrates_g / 2).toFixed(1) : nutrition.carbohydrates_g}g
+                    </span>
                   </div>
                   <div className="flex justify-between space-x-4">
                     <span className="text-gray-400">Fat:</span>
-                    <span className="text-white font-medium">{nutrition.total_fat_g}g</span>
+                    <span className="text-white font-medium">
+                      {selectedPortion === 'half' ? (nutrition.total_fat_g / 2).toFixed(1) : nutrition.total_fat_g}g
+                    </span>
                   </div>
                 </div>
               </TooltipContent>
@@ -75,21 +86,57 @@ export default function IngredientCard({ name, nutrition, category, color, onAdd
         <div className="space-y-1 text-xs text-gray-400 mb-2 md:mb-3">
           <div className="flex justify-between">
             <span>Calories</span>
-            <span className="text-white font-medium">{nutrition.calories}</span>
+            <span className="text-white font-medium">
+              {selectedPortion === 'half' ? Math.round(nutrition.calories / 2) : nutrition.calories}
+            </span>
           </div>
           <div className="flex justify-between">
             <span>Protein</span>
-            <span className="text-white font-medium">{nutrition.protein_g}g</span>
+            <span className="text-white font-medium">
+              {selectedPortion === 'half' ? (nutrition.protein_g / 2).toFixed(1) : nutrition.protein_g}g
+            </span>
           </div>
         </div>
+
+        {/* Portion Size Selection */}
+        {isPortionSelectable && (
+          <div className="mb-2 md:mb-3">
+            <div className="flex rounded-lg overflow-hidden bg-white/10">
+              <motion.button
+                onClick={() => setSelectedPortion('full')}
+                className={`flex-1 py-1 text-xs font-medium transition-all ${
+                  selectedPortion === 'full' 
+                    ? 'bg-blue-500/50 text-white' 
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
+                whileTap={{ scale: 0.95 }}
+              >
+                Full
+              </motion.button>
+              <motion.button
+                onClick={() => setSelectedPortion('half')}
+                className={`flex-1 py-1 text-xs font-medium transition-all ${
+                  selectedPortion === 'half' 
+                    ? 'bg-blue-500/50 text-white' 
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
+                whileTap={{ scale: 0.95 }}
+              >
+                Half
+              </motion.button>
+            </div>
+          </div>
+        )}
         
         <motion.button
-          onClick={handleAdd}
+          onClick={() => handleAdd(isPortionSelectable ? selectedPortion : 'full')}
           className={`w-full mt-2 md:mt-3 py-2 md:py-2 rounded-lg text-xs font-medium transition-all duration-300 ${colorClass} hover:scale-105 active:scale-95 touch-manipulation`}
           whileTap={{ scale: 0.95 }}
         >
           <Plus className="inline w-3 h-3 mr-1 md:mr-2" />
-          <span className="text-xs md:text-xs">Add to Bowl</span>
+          <span className="text-xs md:text-xs">
+            Add {isPortionSelectable ? `${selectedPortion === 'half' ? 'Half' : 'Full'} ` : ''}to Bowl
+          </span>
         </motion.button>
 
         <AnimatePresence>
@@ -103,11 +150,15 @@ export default function IngredientCard({ name, nutrition, category, color, onAdd
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div className="text-center">
                   <div className="text-gray-400">Carbs</div>
-                  <div className="text-white font-medium">{nutrition.carbohydrates_g}g</div>
+                  <div className="text-white font-medium">
+                    {selectedPortion === 'half' ? (nutrition.carbohydrates_g / 2).toFixed(1) : nutrition.carbohydrates_g}g
+                  </div>
                 </div>
                 <div className="text-center">
                   <div className="text-gray-400">Fat</div>
-                  <div className="text-white font-medium">{nutrition.total_fat_g}g</div>
+                  <div className="text-white font-medium">
+                    {selectedPortion === 'half' ? (nutrition.total_fat_g / 2).toFixed(1) : nutrition.total_fat_g}g
+                  </div>
                 </div>
               </div>
             </motion.div>
