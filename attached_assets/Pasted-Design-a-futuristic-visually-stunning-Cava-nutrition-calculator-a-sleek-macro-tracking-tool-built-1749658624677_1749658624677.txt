@@ -1,0 +1,12 @@
+Design a futuristic, visually stunning Cava nutrition calculator — a sleek macro-tracking tool built for health-conscious food lovers and fitness enthusiasts. It should display key nutritional metrics (calories, protein, carbs, fat, fiber, sodium) with beautiful, real-time visualizations and fluid transitions between meal customizations.
+The UI should feel like a blend of modern nutrition apps and Apple Vision Pro — ultra-polished, lightweight, and high-tech. Use a dark-mode base (#0E1117) with vibrant food-inspired accents (Mediterranean blue, olive green, paprika orange) and soft glassmorphism effects on ingredient panels. All nutrition charts should animate on load — macro rings filling smoothly, calorie counters counting up fluidly, and nutrient breakdowns cascading into place.
+Incorporate smooth hover and tap interactions: ingredient cards expand with nutritional details, macro tooltips fade in elegantly, and category switches slide with spring-like animations. The sidebar should feature clean category icons (Greens+Grains, Mains, Toppings, Dips & Spreads, Dressings) with glowing selection states.
+Typography should use a modern sans-serif like Satoshi, Geist, or Space Grotesk, with bold 28–32px section headers and subtle glowing nutritional sublabels. Use soft shadows, rounded ingredient cards, and smart negative space for a breathable, appetizing layout.
+Key sections:
+
+Bowl Builder (drag-and-drop ingredient selection with live macro updates)
+Macro Dashboard (protein/carb/fat rings with target comparisons)
+Nutritional Breakdown (detailed vitamins, minerals, calories per category)
+Goal Tracking (daily targets, meal planning, macro ratios)
+Meal History (saved combinations, favorites, nutritional trends)**
+Everything should feel alive and appetizing — think motion design meets nutrition science. It's MyFitnessPal reimagined for the Mediterranean food-obsessed, health-tracking generation. Users can build their perfect Cava bowl while watching their macros update in real-time with beautiful, food-photography-inspired visuals.

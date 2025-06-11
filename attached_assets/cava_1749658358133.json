@@ -1,0 +1,53 @@
+ "Greens + Grains": {
+                "Brown Rice": { calories: 310, carbohydrates_g: 68, total_fat_g: 50, protein_g: 5 },
+                "Basmati Rice": { calories: 290, carbohydrates_g: 68, total_fat_g: 7, protein_g: 5 },
+                "Black Lentils": { calories: 270, carbohydrates_g: 68, total_fat_g: 7, protein_g: 5 },
+                "SuperGreens": { calories: 40, carbohydrates_g: 68, total_fat_g: 5, protein_g: 3 },
+                "Arugula": { calories: 20, carbohydrates_g: 68, total_fat_g: 5, protein_g: 2 },
+                "Baby Spinach": { calories: 20, carbohydrates_g: 68, total_fat_g: 5, protein_g: 3 },
+                "Romaine": { calories: 20, carbohydrates_g: 68, total_fat_g: 5, protein_g: 5 },
+                "SplendidGreens": { calories: 20, carbohydrates_g: 68, total_fat_g: 5, protein_g: 1 }
+            },
+            "Mains": {
+                "Braised Lamb": { calories: 210, carbohydrates_g: 68, total_fat_g: 5, protein_g: 24 },
+                "Grilled Chicken": { calories: 250, carbohydrates_g: 68, total_fat_g: 5, protein_g: 26 },
+                "Falafel": { calories: 350, carbohydrates_g: 68, total_fat_g: 5, protein_g: 5 },
+                "Grilled Steak": { calories: 170, carbohydrates_g: 68, total_fat_g: 5, protein_g: 25 },
+                "Harissa Honey Chicken": { calories: 200, carbohydrates_g: 68, total_fat_g: 5, protein_g: 25 },
+                "Roasted Vegetables": { calories: 100, carbohydrates_g: 68, total_fat_g: 5, protein_g: 3 },
+                "Spicy Lamb Meatball": { calories: 300, carbohydrates_g: 68, total_fat_g: 5, protein_g: 24 },
+                "Chicken Shawarma": { calories: 100, carbohydrates_g: 68, total_fat_g: 5, protein_g: 16 }
+            },
+            "Toppings": {
+                "Shredded Romaine": { calories: 5, carbohydrates_g: 68, total_fat_g: 0, protein_g: 0 },
+                "Pita Crisps": { calories: 70, carbohydrates_g: 6, total_fat_g: 11, protein_g: 1 },
+                "Cabbage Slaw": { calories: 35, carbohydrates_g: 2, total_fat_g: 3, protein_g: 1 },
+                "Tomato + Onion": { calories: 20, carbohydrates_g: 2, total_fat_g: 1.5, protein_g: 1 },
+                "Persian Cucumber": { calories: 15, carbohydrates_g: 1, total_fat_g: 1, protein_g: 1 },
+                "Tomato + Cucumber": { calories: 5, carbohydrates_g: 1, total_fat_g: 0, protein_g: 1 },
+                "Kalamata Olives": { calories: 35, carbohydrates_g: 2, total_fat_g: 3, protein_g: 0 },
+                "Fiery Broccoli": { calories: 35, carbohydrates_g: 2, total_fat_g: 2.5, protein_g: 1 },
+                "Pickled Onions": { calories: 20, carbohydrates_g: 5, total_fat_g: 0, protein_g: 1 },
+                "Salt-Brined Pickles": { calories: 5, carbohydrates_g: 0, total_fat_g: 0, protein_g: 0 },
+                "Crumbled Feta": { calories: 35, carbohydrates_g: 0, total_fat_g: 2.5, protein_g: 1 },
+                "Fire-Roasted Corn": { calories: 45, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 1 },
+                "Avocado": { calories: 110, carbohydrates_g: 7, total_fat_g: 1, protein_g: 0 }
+            },
+            "Dips & Spreads": {
+                "Tzatziki": { calories: 35, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 1 },
+                "Hummus": { calories: 45, carbohydrates_g: 4, total_fat_g: 2.5, protein_g: 0 },
+                "Roasted Eggplant": { calories: 50, carbohydrates_g: 2, total_fat_g: 2.5, protein_g: 0 },
+                "Crazy Feta": { calories: 70, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Harissa": { calories: 70, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 1 },
+                "Red Pepper Hummus": { calories: 40, carbohydrates_g: 1, total_fat_g: 1, protein_g: 1 }
+            },
+            "Dressings": {
+                "Balsamic Date Vinaigrette": { calories: 60, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 1 },
+                "Yogurt Dill": { calories: 30, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Lemon-Herb Tahini": { calories: 70, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Tahini Caesar": { calories: 50, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Greek Vinaigrette": { calories: 130, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Skrug": { calories: 80, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Hot Harissa Vinaigrette": { calories: 70, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 },
+                "Garlic Dressing": { calories: 180, carbohydrates_g: 1, total_fat_g: 2.5, protein_g: 0 }
+            }
