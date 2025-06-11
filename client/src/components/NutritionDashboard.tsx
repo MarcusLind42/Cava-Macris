@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Save, Share2, TrendingUp } from 'lucide-react';
 import type { Ingredient, TotalNutrition } from '@/types/nutrition';
 
 interface NutritionDashboardProps {
@@ -215,41 +214,7 @@ export default function NutritionDashboard({ selectedIngredients }: NutritionDas
         </div>
       </motion.div>
 
-      {/* Quick Actions */}
-      <motion.div
-        className="glass-panel p-6 rounded-3xl fade-in"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <h3 className="text-lg font-bold mb-4 glow-text">Quick Actions</h3>
-        <div className="space-y-3">
-          <motion.button
-            className="w-full glass-panel p-3 rounded-xl hover:bg-white/10 transition-all text-left flex items-center space-x-3"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Save className="w-4 h-4 text-blue-400" />
-            <span>Save to Favorites</span>
-          </motion.button>
-          <motion.button
-            className="w-full glass-panel p-3 rounded-xl hover:bg-white/10 transition-all text-left flex items-center space-x-3"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Share2 className="w-4 h-4 text-green-400" />
-            <span>Share Bowl</span>
-          </motion.button>
-          <motion.button
-            className="w-full glass-panel p-3 rounded-xl hover:bg-white/10 transition-all text-left flex items-center space-x-3"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <TrendingUp className="w-4 h-4 text-orange-400" />
-            <span>View Trends</span>
-          </motion.button>
-        </div>
-      </motion.div>
+
     </div>
   );
 }

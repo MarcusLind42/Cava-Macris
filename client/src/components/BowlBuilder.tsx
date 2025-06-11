@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Save, RotateCcw, Minus, Plus, X } from 'lucide-react';
+import { RotateCcw, Minus, Plus, X } from 'lucide-react';
 import IngredientCard from './IngredientCard';
 import type { Ingredient, CategoryKey, NutritionInfo } from '@/types/nutrition';
 import { nutritionData, getCategoryByKey } from '@/lib/nutritionData';
@@ -69,25 +69,15 @@ export default function BowlBuilder({ selectedCategory, selectedIngredients, onI
     >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold glow-text">Build Your Bowl</h2>
-        <div className="flex space-x-2">
-          <motion.button
-            className="glass-panel px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-all flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Save className="w-4 h-4" />
-            <span>Save Bowl</span>
-          </motion.button>
-          <motion.button
-            onClick={clearBowl}
-            className="glass-panel px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-all flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <RotateCcw className="w-4 h-4" />
-            <span>Clear</span>
-          </motion.button>
-        </div>
+        <motion.button
+          onClick={clearBowl}
+          className="glass-panel px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-all flex items-center space-x-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <RotateCcw className="w-4 h-4" />
+          <span>Clear</span>
+        </motion.button>
       </div>
 
       {/* Selected Ingredients Display */}
