@@ -1,1 +1,1 @@
-(deployed application)[https://cavamacroscalculator.com/]
+https://cavamacroscalculator.com/
