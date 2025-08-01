@@ -24,7 +24,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  base: process.env.NODE_ENV === "production" ? "/Cava-Macris/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/" : "/",
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
@@ -34,6 +34,7 @@ export default defineConfig({
         "404": path.resolve(import.meta.dirname, "client", "404.html"),
       },
     },
+    copyPublicDir: true,
   },
   server: {
     fs: {
